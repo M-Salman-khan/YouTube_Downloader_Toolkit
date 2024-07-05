@@ -1,4 +1,4 @@
-# Playlist Downloader
+# Youtube Playlist Downloader
 
 This Python script downloads all videos from a YouTube playlist and saves them to a directory named after the playlist. The script uses the `pytube` library to handle video downloading.
 
