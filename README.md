@@ -1,7 +1,3 @@
-Here's a README for the `Playlist_downloader.py` script:
-
----
-
 # Playlist Downloader
 
 This Python script downloads all videos from a YouTube playlist and saves them to a directory named after the playlist. The script uses the `pytube` library to handle video downloading.
@@ -77,7 +73,3 @@ All downloads completed.
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-Feel free to modify this README as needed to better suit your requirements.
