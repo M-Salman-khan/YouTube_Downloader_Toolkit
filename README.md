@@ -1,75 +1,71 @@
-# Youtube Playlist Downloader
+# Python Playlist Downloader
 
-This Python script downloads all videos from a YouTube playlist and saves them to a directory named after the playlist. The script uses the `pytube` library to handle video downloading.
+This Python script allows you to download all videos from a given playlist URL on YouTube. It saves the videos to your local directory, making playlists available offline anytime.
 
-## Author
+## Features
 
-- **Name**: Salman Khan
-- **Instagram**: [khansalman.ig](https://instagram.com/khansalman.ig)
-- **Website**: [m-salman-khan.web.app](https://m-salman-khan.web.app)
+- Downloads all videos from a specified playlist.
+- Saves downloaded videos to a chosen folder on your device.
+- Provides status updates on each download’s progress.
 
 ## Requirements
 
-Ensure you have `pytube` installed before running the script. If not, you can install it using pip:
+- **Python 3.x**: Ensure Python is installed on your system. You can check your version by running:
+  ```bash
+  python --version
+  ```
+- **pip**: Python package manager, typically included with Python installations.
+- **FFmpeg**: Required for video processing.
 
-```sh
-pip install pytube
+## Installation
+
+### Step 1: Clone the Repository
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/playlist-downloader.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd playlist-downloader
+   ```
+
+### Step 2: Install Dependencies
+
+Install Python dependencies:
+```bash
+pip install -r requirements.txt
 ```
 
-For more information on installing Python packages, visit the [official documentation](https://packaging.python.org/en/latest/tutorials/installing-packages).
+### Step 3: Install FFmpeg (for Windows)
+
+You can install FFmpeg on Windows easily using Chocolatey, a Windows package manager.
+
+1. Install [Chocolatey](https://chocolatey.org/install) if you haven’t already.
+2. Once Chocolatey is set up, open a new command prompt (with administrator privileges) and run:
+   ```bash
+   choco install ffmpeg
+   ```
+3. After installation, verify FFmpeg by running:
+   ```bash
+   ffmpeg -version
+   ```
+
+For other operating systems, refer to [FFmpeg's official installation guide](https://ffmpeg.org/download.html).
 
 ## Usage
 
-1. Clone or download the script to your local machine.
-2. Open a terminal or command prompt.
-3. Navigate to the directory containing the script.
-4. Run the script using Python:
-
-   ```sh
-   python Playlist_downloader.py
+1. Run the script:
+   ```bash
+   python main.py
    ```
+2. Enter the URL of the playlist you want to download when prompted.
+3. The videos will begin downloading to the specified directory.
 
-5. When prompted, enter the URL of the YouTube playlist you want to download.
-6. The script will create a directory named after the playlist (with any illegal characters sanitized) and download all videos in the highest available resolution to this directory.
+## Note
 
-## How It Works
+- This script is for personal use only. Be sure to respect YouTube’s terms of service regarding downloading videos.
 
-1. The script prompts the user to enter the URL of a YouTube playlist.
-2. It retrieves the playlist details and creates a directory named after the playlist.
-3. It collects all video URLs from the playlist.
-4. It downloads each video in the highest available resolution, saving them in the previously created directory with filenames numbered in the order of their appearance in the playlist.
-5. The script prints the progress and completion status for each video download.
+## Contributing
 
-## Example
-
-```sh
-Enter Playlist URL: https://www.youtube.com/playlist?list=PL1234567890
-Playlist Name : Example Playlist
-Channel Name  : Example Channel
-Total Videos  : 10
-Total Views   : 100000
-
-Downloading Started...
-
-1/10 --> 001 - video1.mp4 Downloaded
-2/10 --> 002 - video2.mp4 Downloaded
-...
-10/10 --> 010 - video10.mp4 Downloaded
-
-All downloads completed.
-```
-
-## Notes
-
-- Ensure you have a stable internet connection during the download process.
-- If the playlist contains a large number of videos, the download process might take a significant amount of time.
-
-## Troubleshooting
-
-- If you encounter errors, ensure you have installed all required dependencies.
-- Check your internet connection if downloads are failing.
-- Ensure the provided playlist URL is correct and accessible.
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
+Feel free to open issues or submit pull requests to improve the script or add new features!
