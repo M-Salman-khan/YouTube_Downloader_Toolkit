@@ -2,6 +2,12 @@
 
 This Python script allows you to download all videos from a given playlist URL on YouTube. It saves the videos to your local directory, making playlists available offline anytime.
 
+## Author
+
+- **Name**: M. Salman Khan
+- **Instagram**: [khansalman.ig](https://instagram.com/khansalman.ig)
+- **Website**: [m-salman-khan.web.app](https://m-salman-khan.web.app)
+
 ## Features
 
 - Downloads all videos from a specified playlist.
