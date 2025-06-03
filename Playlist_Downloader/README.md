@@ -24,6 +24,7 @@ A Python script to download all videos from a YouTube playlist at up to 720p res
 Playlist_Downloader/
 ├── Playlist_downloader_at_720p.py
 ├── README.md
+├── LICENSE
 └── requirements.txt
 ```
 

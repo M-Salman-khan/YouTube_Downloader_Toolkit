@@ -23,6 +23,7 @@ A simple Python script to download a single YouTube video at up to 720p resoluti
 Video_Downloader/
 ├── video_downloader.py
 ├── README.md
+├── LICENSE
 └── requirements.txt
 ```
 
