@@ -8,22 +8,22 @@
   <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License Badge"/>
 </p>
 
-
-A Python toolkit to download **YouTube videos and playlists** in different qualities (up to **8K**) or extract audio as MP3 using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
+A **Python Flask web app** to download **YouTube videos and playlists** in multiple qualities (up to 8K) or extract audio as MP3 using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
 
 ---
 
 ## 🚀 Features
-- 📹 Download **single YouTube videos** or entire **playlists**.  
-- 🎞️ Quality options:  
-  - 1 → **Great Quality** (up to 8K)  
-  - 2 → **Bestest Quality** (up to 4K)  
-  - 3 → **Best Quality** (up to 1080p)  
-  - 4 → **Good Quality** (up to 480p)  
-  - 5 → **Audio only (MP3, 192kbps)**  
-- 📂 Playlist videos are saved inside a folder named after the playlist.  
-- 🔗 Automatic MP4 merging for video + audio.  
-- 🎵 Audio extracted with FFmpeg in **MP3 format**.  
+- 📹 Download **single videos** or **entire playlists** from YouTube.
+- 🎞️ Quality options:
+  - 1 → **8K**
+  - 2 → **4K**
+  - 3 → **1080p**
+  - 4 → **480p**
+  - 5 → **Audio only (MP3, 192 kbps)**
+- 📂 Playlist videos are stored in a folder named after the playlist and can be downloaded as a ZIP.
+- 🔗 Automatic MP4 merging for video + audio.
+- 🎵 Audio extracted to **MP3** with FFmpeg.
+- 💾 Files are automatically cleaned up after download (for single videos), or playlist folders are deleted after zipping.
 
 ---
 
@@ -31,6 +31,9 @@ A Python toolkit to download **YouTube videos and playlists** in different quali
 ```
 YT_Downloader/
 ├── main.py
+├── templates/
+│   └── index.html
+├── downloads/
 ├── LICENSE
 ├── README.md
 └── requirements.txt
@@ -39,78 +42,70 @@ YT_Downloader/
 ---
 
 ## ✅ Requirements
-- Python 3.7+  
-- yt-dlp  
-- FFmpeg (required for merging & audio extraction)  
+- Python 3.7+
+- Flask
+- yt-dlp
+- FFmpeg (for merging and audio extraction)
 
 Install dependencies:
-```sh
+```bash
 pip install -r requirements.txt
 ```
-
 >[!WARNING]
->Make sure **FFmpeg** is installed and available in your >system PATH.  
+>  Make sure **FFmpeg** is installed and available in your system PATH.
 
 ---
 
 ## ▶️ Usage
-Run the main script:
-```sh
+
+1. Run the Flask app:
+
+```bash
 python main.py
 ```
 
-You’ll be prompted to enter the **YouTube video/playlist URL** and choose the quality option.  
+2. Open the browser at `http://127.0.0.1:5000/`.
+
+3. Paste the YouTube video or playlist URL.
+
+4. Choose your desired quality:
+
+| Value | Quality |
+|-------|---------|
+| 1     | 8K      |
+| 2     | 4K      |
+| 3     | 1080p   |
+| 4     | 480p    |
+| 5     | Audio (MP3) |
+
+5. Click **Download**.  
+
+- Single videos will download immediately.  
+- Playlists will be zipped and sent for download.  
+- Audio-only downloads will be extracted to MP3 at 192 kbps.
+
+
+---
+## 👀 Demo (Screenshot)
+![App Screenshot](.github/assets/Screenshot%202025-08-31%20141105.png)
+
 
 ---
 
-## 💡 Output Examples
-
-### Example 1: Single Video Download
-```
-Enter url of YT Video : https://youtu.be/Ky5i7NC4YgY
-Enter 1 for great quality (upto 8k)
-Enter 2 for Bestest quality (upto 4k)
-Enter 3 for best quality (upto 1080p)
-Enter 4 for good quality (upto 480p)
-Enter 5 for audio
-
-2
-⚠️ If chosen quality is unavailable, the closest available will be downloaded.
-[download] Destination: downloads/Muhabbat Gumshuda Meri 🎵❤️Original Sound Track - HUM MUSIC_720p.mp4
-Downloaded video: Muhabbat Gumshuda Meri 🎵❤️Original Sound Track - HUM MUSIC
-```
-
-### Example 2: Playlist Download
-```
-Enter url of YT Video : https://www.youtube.com/playlist?list=...
-Enter quality option (1–5): 3
-⚠️ If chosen quality is unavailable, the closest available will be downloaded.
-Downloaded playlist: My Playlist, 12 videos
-```
-
-### Example 3: Audio Only
-```
-Enter url of YT Video : https://youtu.be/xyz123
-Enter 5 for audio
-[download] Destination: downloads/Example Song_mp3.mp3
-Downloaded video: Example Song
-```
-
----
-
-> [!NOTE]  
-> - If the chosen resolution is **not available**, yt-dlp automatically picks the closest quality.  
-> - Playlist downloads create a separate folder with the **playlist name**.  
-> - MP3 audio is extracted at **192 kbps** by default (configurable in code).  
-> - Make sure you have enough disk space for high-resolution videos (8K/4K).  
+>[!NOTE]
+>- yt-dlp automatically chooses the closest available quality if the selected one isn’t available.
+>- Playlists are downloaded to a folder named after the playlist; the folder is deleted after zipping.
+>- MP3 extraction is done with FFmpeg at **192 kbps** by default.
+>- Ensure you have enough disk space for high-resolution video downloads (especially 8K/4K).
 
 ---
 
 ## 📄 License
-This project is licensed under the [MIT License](LICENSE).  
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
 ## 🙏 Credits
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) – The backend downloader  
-- [FFmpeg](https://ffmpeg.org/) – Used for merging and audio extraction  
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) – Video/audio downloader backend  
+- [FFmpeg](https://ffmpeg.org/) – Audio extraction and video merging  
+- [Flask](https://flask.palletsprojects.com/) – Web framework

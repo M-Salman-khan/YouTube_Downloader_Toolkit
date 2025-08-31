@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        :root{
+            color-scheme: dark;
+        }
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100dvh;
+            width: 100%;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        nav h2{
+            font-size: 30px;
+        }
+        span{
+            color: rgb(0, 200, 255);
+        }
+        form{
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 200px;
+            width: 30%;
+            border: 2px solid white;
+            padding: 20px;
+        }
+        main{
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        form input{
+            padding: 4px 10px;
+            font-size: 18px;
+            width: 95%;
+        }
+        form button{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: transparent;
+            border: 1px solid white;
+            width: 100%;
+        }
+        form button:hover{
+            background-color: rgba(0, 200, 255);
+            color: black;
+            transition-duration: 0.4s;
+            border-color: transparent;
+            cursor: pointer;
+        }
+        form p{
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 550;
+        }
+        .quality{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Youtube Video <span> Downloader</span></h2>
+    </nav>
+    <main>
+        <form action="/download_video" method="get">
+            <p>Paste your youtube URL here</p>
+            <input type="text" name="url" placeholder="Enter url " required>
+            <div class="quality">
+                <label for="quality">Choose quality</label>
+                <select name="quality" id="quality">
+                    <option value="1">8K</option>
+                    <option value="2">4K</option>
+                    <option value="3">1080p</option>
+                    <option value="4">480p</option>
+                    <option value="5">audio</option>
+                </select>
+            </div>
+            <button type="submit" onclick="submit()">Download</button>
+        </form>
+    </main>
+    <script>
+        function submit(){
+            document.querySelector("form").addEventListener("submit",(e)=>e.preventDefault())
+        }
+    </script>
+</body>
+</html>
