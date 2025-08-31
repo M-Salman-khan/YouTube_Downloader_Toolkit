@@ -1,128 +1,116 @@
-# YouTube Downloader Toolkit (720p)
+# 🎥 YouTube Downloader Toolkit (8K, 4K, 1080p, 480p, MP3)
 
-[![Python](https://img.shields.io/badge/Python-3.7%2B-blue?logo=python)](https://www.python.org/)
-[![yt-dlp](https://img.shields.io/badge/yt--dlp-latest-brightgreen?logo=youtube)](https://github.com/yt-dlp/yt-dlp)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge"/>
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask Badge"/>
+  <img src="https://img.shields.io/badge/yt--dlp-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="yt-dlp Badge"/>
+  <img src="https://img.shields.io/badge/FFmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white" alt="FFmpeg Badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License Badge"/>
+</p>
 
-A Python toolkit to download single videos or entire playlists from YouTube at up to 720p resolution using [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+
+A Python toolkit to download **YouTube videos and playlists** in different qualities (up to **8K**) or extract audio as MP3 using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
 
 ---
 
-## 🚀 Projects Included
-
-### 1. 📥 YouTube Video Downloader
-- Downloads a **single YouTube video** at up to 720p.
-- Saves videos in the `Downloaded_Videos` folder.
-- Minimal user prompts and automatic filename sanitization.
-
-File: `Video_Downloader/Video_Downloader_at_720p.py`
-
-### 2. 📥 YouTube Playlist Downloader
-- Downloads all videos from a **YouTube playlist**, in order.
-- Saves them in a folder named after the playlist.
-- Includes title sanitization and MP4 merging.
-
-File: `Playlist_Downloader/Playlist_downloader_at_720p.py`
+## 🚀 Features
+- 📹 Download **single YouTube videos** or entire **playlists**.  
+- 🎞️ Quality options:  
+  - 1 → **Great Quality** (up to 8K)  
+  - 2 → **Bestest Quality** (up to 4K)  
+  - 3 → **Best Quality** (up to 1080p)  
+  - 4 → **Good Quality** (up to 480p)  
+  - 5 → **Audio only (MP3, 192kbps)**  
+- 📂 Playlist videos are saved inside a folder named after the playlist.  
+- 🔗 Automatic MP4 merging for video + audio.  
+- 🎵 Audio extracted with FFmpeg in **MP3 format**.  
 
 ---
 
 ## 🗂 Folder Structure
-
 ```
-YT_Playlist_Downloader/
-├── Playlist_Downloader/
-│   ├── LICENSE
-│   ├── Playlist_downloader_at_720p.py
-│   ├── README.md
-│   └── requirements.txt
-│
-├── Video_Downloader/
-│   ├── LICENSE
-│   ├── README.md
-│   ├── requirements.txt
-│   └── Video_Downloader_at_720p.py
-│
+YT_Downloader/
+├── main.py
 ├── LICENSE
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
 ## ✅ Requirements
-
-- Python 3.7+
-- yt-dlp
+- Python 3.7+  
+- yt-dlp  
+- FFmpeg (required for merging & audio extraction)  
 
 Install dependencies:
 ```sh
 pip install -r requirements.txt
 ```
 
-Example `requirements.txt`:
-```
-yt-dlp
-```
+>[!WARNING]
+>Make sure **FFmpeg** is installed and available in your >system PATH.  
 
 ---
 
 ## ▶️ Usage
-
-### Run Single Video Downloader
+Run the main script:
 ```sh
-cd Video_Downloader
-python Video_Downloader_at_720p.py
+python main.py
 ```
-You’ll be prompted to enter the **YouTube video URL**.
 
-### Run Playlist Downloader
-```sh
-cd Playlist_Downloader
-python Playlist_downloader_at_720p.py
-```
-You’ll be prompted to enter the **YouTube playlist URL**.
+You’ll be prompted to enter the **YouTube video/playlist URL** and choose the quality option.  
 
 ---
 
 ## 💡 Output Examples
 
-### Video Downloader
+### Example 1: Single Video Download
 ```
-Enter Video URL: https://www.youtube.com/watch?v=...
-Video Title   : Example Title
-Channel Name  : Example Channel
-Downloading: Example Title
-Download completed.
+Enter url of YT Video : https://youtu.be/Ky5i7NC4YgY
+Enter 1 for great quality (upto 8k)
+Enter 2 for Bestest quality (upto 4k)
+Enter 3 for best quality (upto 1080p)
+Enter 4 for good quality (upto 480p)
+Enter 5 for audio
+
+2
+⚠️ If chosen quality is unavailable, the closest available will be downloaded.
+[download] Destination: downloads/Muhabbat Gumshuda Meri 🎵❤️Original Sound Track - HUM MUSIC_720p.mp4
+Downloaded video: Muhabbat Gumshuda Meri 🎵❤️Original Sound Track - HUM MUSIC
 ```
 
-### Playlist Downloader
+### Example 2: Playlist Download
 ```
-Enter Playlist URL: https://www.youtube.com/playlist?list=...
-Playlist Name : My Playlist
-Channel Name  : Example Channel
-Total Videos  : 10
-Downloading Started...
+Enter url of YT Video : https://www.youtube.com/playlist?list=...
+Enter quality option (1–5): 3
+⚠️ If chosen quality is unavailable, the closest available will be downloaded.
+Downloaded playlist: My Playlist, 12 videos
+```
 
-Downloaded: 001 - Video Title
-...
-All downloads completed.
+### Example 3: Audio Only
+```
+Enter url of YT Video : https://youtu.be/xyz123
+Enter 5 for audio
+[download] Destination: downloads/Example Song_mp3.mp3
+Downloaded video: Example Song
 ```
 
 ---
 
-## ⚠️ Notes
-
-- Downloads are capped at **720p** for video quality.
-- Filenames are sanitized to avoid filesystem issues.
-- Errors (e.g. unavailable video) are caught and printed.
+> [!NOTE]  
+> - If the chosen resolution is **not available**, yt-dlp automatically picks the closest quality.  
+> - Playlist downloads create a separate folder with the **playlist name**.  
+> - MP3 audio is extracted at **192 kbps** by default (configurable in code).  
+> - Make sure you have enough disk space for high-resolution videos (8K/4K).  
 
 ---
 
 ## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).  
 
 ---
 
 ## 🙏 Credits
-
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) for the powerful downloading backend.
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) – The backend downloader  
+- [FFmpeg](https://ffmpeg.org/) – Used for merging and audio extraction  
