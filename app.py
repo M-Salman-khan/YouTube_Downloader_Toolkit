@@ -1,5 +1,5 @@
 from yt_dlp import YoutubeDL
-import os, shutil, zipfile
+import os, shutil
 from flask import Flask,render_template,request,send_file
 app=Flask(__name__)
 
