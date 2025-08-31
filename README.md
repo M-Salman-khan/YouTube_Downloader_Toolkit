@@ -1,4 +1,4 @@
-# 🎥 YouTube Downloader Toolkit (8K, 4K, 1080p, 480p, MP3)
+# 🎥 YouTube Downloader Toolkit (8K, 4K, 1080p, 480p, MP3) - [CLI Version]
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge"/>
