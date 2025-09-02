@@ -1,7 +1,8 @@
 from yt_dlp import YoutubeDL
 def get_video(url,quality):
     if not url:
-        return f"{url}",400
+        print("Please provide URL first! ")
+        return
     print("⚠️ If chosen quality is unavailable, the closest available will be downloaded.")
     if quality==1: video_format="bestvideo[ext=mp4][height<=4320p]+bestaudio[ext=m4a]/best[ext=mp4][height<=4320p]" #Upto 8k
     
@@ -20,13 +21,13 @@ def get_video(url,quality):
     ydl_opts={
         "outtmpl":download_path,
         "format":video_format,
-        "merge_output_format": "mp4"
+        "merge_output_format": "mp4",
     }
     if quality==5:
         if "list" in url:
-            download_path="downloads/%(playlist_title)s/%(title)s_mp3.%(ext)s"
+            download_path="downloads/%(playlist_title)s/%(title)s.%(ext)s"
         else:
-            download_path= "downloads/%(title)s_mp3.%(ext)s"
+            download_path= "downloads/%(title)s.%(ext)s"
         ydl_opts = {
         "outtmpl": download_path,
         "format": "bestaudio/best",
