@@ -51,7 +51,7 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
->[!WARNING]
+>[!NOTE]
 >  Make sure **FFmpeg** is installed and available in your system PATH.
 
 ---
