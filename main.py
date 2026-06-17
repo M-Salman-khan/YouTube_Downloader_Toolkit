@@ -18,7 +18,7 @@ def get_video(url,quality):
 
     else: print("Invalid quality option selected!")
 
-    if "list" in url: download_path= "downloads/%(playlist_title)s/%(title)s_%(height)sp.%(ext)s"
+    if "list" in url: download_path = "downloads/%(playlist_title)s/%(playlist_index)s - %(title)s_%(height)sp.%(ext)s"
     else: download_path= "downloads/%(title)s_%(height)sp.%(ext)s"
     ydl_opts={
         "outtmpl":download_path,
