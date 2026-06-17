@@ -17,10 +17,11 @@ A Python toolkit to download **YouTube videos and playlists** in different quali
 - 📹 Download **single YouTube videos** or entire **playlists**.  
 - 🎞️ Quality options:  
   - 1 → **Great Quality** (up to 8K)  
-  - 2 → **Bestest Quality** (up to 4K)  
+  - 2 → **Ultra Quality** (up to 4K)  
   - 3 → **Best Quality** (up to 1080p)  
-  - 4 → **Good Quality** (up to 480p)  
-  - 5 → **Audio only (MP3, 192kbps)**  
+  - 4 → **Average Quality** (up to 720p)  
+  - 5 → **Soso Quality** (up to 480p)  
+  - 6 → **Audio only (MP3, 192kbps)**  
 - 📂 Playlist videos are saved inside a folder named after the playlist.  
 - 🔗 Automatic MP4 merging for video + audio.  
 - 🎵 Audio extracted with FFmpeg in **MP3 format**.  
@@ -69,10 +70,11 @@ You’ll be prompted to enter the **YouTube video/playlist URL** and choose the 
 ```
 Enter url of YT Video : https://youtu.be/Ky5i7NC4YgY
 Enter 1 for great quality (upto 8k)
-Enter 2 for Bestest quality (upto 4k)
-Enter 3 for best quality (upto 1080p)
-Enter 4 for good quality (upto 480p)
-Enter 5 for audio
+Enter 2 for ultra qualty (upto 4k) \n
+Enter 3 for best quality (upto 1080p)\n 
+Enter 4 for avg quality (upto 720)\n
+Enter 5 for soso quality (upto 480p)\n
+Enter 6 for audio
 
 2
 ⚠️ If chosen quality is unavailable, the closest available will be downloaded.
