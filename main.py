@@ -49,10 +49,5 @@ def get_video(url,quality):
     except Exception as e: print(f"❌ Error occured {str(e)}")
 
 url=input("Enter url of YT Video : ")
-quality=int(input("""Enter 1 for great quality (upto 8k)\n
-    Enter 2 for ultra qualty (upto 4k) \n
-    Enter 3 for best quality (upto 1080p)\n 
-    Enter 4 for avg quality (upto 720)\n
-    Enter 5 for soso quality (upto 480p)\n
-    Enter 6 for audio\n"""))
+quality=int(input("Enter 1 for great quality (upto 8k)\nEnter 2 for ultra qualty (upto 4k) \nEnter 3 for best quality (upto 1080p)\nEnter 4 for avg quality (upto 720)\nEnter 5 for soso quality (upto 480p)\nEnter 6 for audio\n\nEnter your choice: "))
 get_video(url,quality)
