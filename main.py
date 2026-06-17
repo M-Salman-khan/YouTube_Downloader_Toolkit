@@ -7,12 +7,14 @@ def get_video(url,quality):
     if quality==1: video_format="bestvideo[ext=mp4][height<=4320p]+bestaudio[ext=m4a]/best[ext=mp4][height<=4320p]" #Upto 8k
     
     elif quality==2: video_format= "bestvideo[ext=mp4][height<=2160]+bestaudio[ext=m4a]/best[ext=mp4][height<=2160]" #Upto 2k
-
+    
     elif quality==3: video_format= "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4][height<=1080]" #Upto 1080p
 
-    elif quality==4: video_format= "bestvideo[ext=mp4][height<=480]+bestaudio[ext=m4a]/best[ext=mp4][height<=480]" #Upto 480p
-    
-    elif quality==5: video_format= "bestaudio/best"
+    elif quality==4: video_format = "bestvideo[ext=mp4][height<=720]+bestaudio[ext=m4a]/best[ext=mp4][height<=720]" # up to 720p 
+
+    elif quality==5: video_format= "bestvideo[ext=mp4][height<=480]+bestaudio[ext=m4a]/best[ext=mp4][height<=480]" #Upto 480p
+
+    elif quality==6: video_format= "bestaudio/best"
 
     else: print("Invalid quality option selected!")
 
@@ -23,7 +25,7 @@ def get_video(url,quality):
         "format":video_format,
         "merge_output_format": "mp4",
     }
-    if quality==5:
+    if quality==6:
         if "list" in url:
             download_path="downloads/%(playlist_title)s/%(title)s.%(ext)s"
         else:
@@ -47,5 +49,10 @@ def get_video(url,quality):
     except Exception as e: print(f"❌ Error occured {str(e)}")
 
 url=input("Enter url of YT Video : ")
-quality=int(input("Enter 1 for great quality (upto 8k)\nEnter 2 for Bestest qualty (upto 4k) \nEnter 3 for best quality (upto 1080p)\nEnter 4 for good quality (upto 480p)\nEnter 5 for audio\n"))
+quality=int(input("""Enter 1 for great quality (upto 8k)\n
+    Enter 2 for ultra qualty (upto 4k) \n
+    Enter 3 for best quality (upto 1080p)\n 
+    Enter 4 for avg quality (upto 720)\n
+    Enter 5 for soso quality (upto 480p)\n
+    Enter 6 for audio\n"""))
 get_video(url,quality)
